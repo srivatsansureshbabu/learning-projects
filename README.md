@@ -8,7 +8,7 @@ The focus is on learning by doing, experimenting with core principles, and docum
 ## Projects Included
 - **Perceptron From Scratch** – single-layer perceptron trained to learn the AND gate.
 - **Linear Regression From Scratch** – gradient descent implementation to fit a line to data.
-- **[Other Mini Projects]** – additional exercises exploring basic ML algorithms and concepts.
+- **Logistic Regression From Scratch** – gradient descent implementation that predicts the likelihood of passing based on hours studied, hours slept, and practice problems completed.
 
 Each project is organized in its own folder with:
 - Implementation code

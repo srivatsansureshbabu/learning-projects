@@ -32,6 +32,9 @@ bias = rng.uniform(-1, 1)
 learning_rate = 0.01
 epochs = 30
 
+#Graphing purposes
+loss_history = []
+
 # Training loop
 for epoch in range(epochs):
   for i, x in enumerate(features):
@@ -39,6 +42,7 @@ for epoch in range(epochs):
     y_prime = features[i].dot(weights) + bias
     sigmoid = 1/(1 + np.exp(-y_prime))
     error = -y[i]*np.log(sigmoid) + (1-y[i]) * np.log(1-sigmoid)
+    loss_history.append(error) # for visuialization purposes only
     grad_w = (sigmoid-y[i])*features[i]
     grad_b = (sigmoid-y[i])
 
@@ -78,3 +82,17 @@ for i, output in enumerate(y):
 
 print((count/length)*100,'%')
 
+import matplotlib.pyplot as plt
+
+# --- Inside your training loop, after computing 'error' ---
+# Instead of modifying your original code, just append the error
+# This goes right after `error = -y[i]*np.log(sigmoid) + (1-y[i]) * np.log(1-sigmoid)`
+loss_history.append(error)
+
+# --- After your training/testing loops ---
+# Plot the loss over iterations
+plt.plot(loss_history)
+plt.xlabel('Training Step (iteration)')
+plt.ylabel('Cross-Entropy Loss')
+plt.title('Training Loss over Time')
+plt.show()

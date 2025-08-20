@@ -59,3 +59,12 @@ The network adjusts its weights and biases over multiple epochs so that its pred
 | Can solve XOR? | ❌ | ✅ |
 | Non-linearity | No | Yes (via activations) |
 | Complexity | Simple | Higher, requires backpropagation |
+
+## Things to Experiment With
+
+- **Initial Weights** – MLPs depend heavily on the first initialized weights. Run the training program multiple times and observe that sometimes the training works perfectly, and sometimes it struggles.  
+- **Number of Epochs** – Experiment with more or fewer epochs to see how it affects learning and convergence.  
+- **Monitoring Predictions** – Print predictions after each pass through the dataset and observe how they evolve over time.  
+- **Learning Rate** – Adjust the learning rate to see how it impacts training speed and stability.  
+- **Number of Hidden Neurons** – Change the number of neurons in hidden layers to explore network capacity.
+

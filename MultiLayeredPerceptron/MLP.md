@@ -1,10 +1,61 @@
-# Multi Layered Perceptron
+# Multi-Layered Perceptron (MLP)
 
-This is a step above the Single Layered Perceptron. 
-The single layered perceptron just one set of weights and biases,
-but in the multi-layered perecptron, theres three sets of biases.
+A **Multi-Layered Perceptron** is an extension of the Single-Layer Perceptron (SLP) that can learn **more complex, non-linear patterns**. Unlike the SLP, which can only separate data with a straight line, an MLP can separate patterns like XOR that a single layer cannot handle.  
 
-# Recommended knowledge/practice
-SLPs (Single Layered Perceptrons)
-Logistic Regression
-Linear Regression
+---
+
+## Recommended Knowledge / Practice
+
+- **Single-Layer Perceptrons (SLP)**  
+- **Logistic Regression**  
+- **Linear Regression**  
+- **Basic calculus** (for understanding gradients)  
+- **Forward and Backward Passes**  
+
+---
+
+## What This Project Does
+
+This MLP has:
+
+- **One hidden layer** with multiple neurons.  
+- **Weights and biases for each neuron**, including the hidden and output layers.  
+- **Sigmoid activation functions** to introduce non-linearity.  
+- **Training loop** using **forward pass**, **loss computation**, and **backpropagation**.  
+
+It learns the **XOR** logical operator:
+
+- **Input data**: `[0,0], [0,1], [1,0], [1,1]`  
+- **Expected outputs**: `[0,1,1,0]`  
+
+The network adjusts its weights and biases over multiple epochs so that its predictions match the XOR outputs.
+
+---
+
+## Key Ideas
+
+1. **Forward Pass**:  
+   Each layer computes `output = sigmoid(weights * input + bias)` to pass to the next layer.  
+
+2. **Activation Functions**:  
+   Non-linear functions (like sigmoid) that allow the network to solve problems that are **not linearly separable**.  
+
+3. **Backpropagation**:  
+   A method to **update weights and biases** based on the **error** at the output.  
+   - Computes **gradients** of the loss with respect to weights and biases.  
+   - Propagates these errors backward through the network to adjust all parameters.  
+
+4. **Training vs. Testing**:  
+   - **Training**: Repeatedly adjust weights and biases to minimize error.  
+   - **Testing**: Feed inputs forward with the learned weights to check predictions.  
+
+---
+
+## Key Difference from SLP
+
+| Feature | SLP | MLP |
+|---------|-----|-----|
+| Layers | 1 | 2+ (hidden + output) |
+| Can solve XOR? | ❌ | ✅ |
+| Non-linearity | No | Yes (via activations) |
+| Complexity | Simple | Higher, requires backpropagation |
